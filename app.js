@@ -12,16 +12,16 @@ app.use('/images', express.static(__dirname + 'public/images'))
 
 // Set Views
 app.set('views', './views')
-app.set('view engin', 'ejs')
+app.set('view engine', 'ejs')
+
+// app.engine('html', require('ejs').renderFile)
+// app.set('views', path.join(__dirname, 'views'))
+//swap jade for ejs etc
 
 app.get('', (req, res) => {
-    res.render('index', { text: 'This is EJS.'})
+    res.render('index', { text: 'This is EJS'})
+    // res.render('index', { __dirname + '/views/index.ejs'})
 })
-
-app.get('/about', (req, res) => {
-    res.render('about', { text: 'About Page.'})
-})
-
 
 
 // Listen on port 3000
